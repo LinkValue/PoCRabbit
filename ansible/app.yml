@@ -12,8 +12,7 @@
     - php
     - composer
     - rabbitmq-management
-    - nodejs
-    - logstash
+    - kafka
   vars_files:
     - vars.yml
     - vars.local.yml

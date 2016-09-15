@@ -11,3 +11,9 @@
 
 - src: DavidWittman.redis
   name: redis
+
+- src: williamyeh.oracle-java
+  name: java-jdk
+
+- src: https://github.com/jaytaylor/ansible-kafka
+  name: kafka
