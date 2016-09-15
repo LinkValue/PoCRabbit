@@ -20,11 +20,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
 
         # Network
-        local.vm.hostname = "acme-project"
-        local.vm.network "private_network", ip: "192.168.100.10"
+        local.vm.hostname = "rabbit.kafka"
+        local.vm.network "private_network", ip: "192.168.100.20"
 
         # Share folders
-        local.vm.synced_folder ".", "/var/www/AcmeProject/", id:"project-root", type: "nfs", mount_options: ["nolock,vers=3,udp,noatime,actimeo=1"]
+        local.vm.synced_folder ".", "/var/www/rabbit_kafka/", id:"project-root", type: "nfs", mount_options: ["nolock,vers=3,udp,noatime,actimeo=1"]
 
         # Ansible provisionning
         local.vm.provision :ansible do |ansible|

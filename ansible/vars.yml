@@ -1,32 +1,22 @@
 ---
 
-workspace: /var/www/AcmeProject
+workspace: /var/www/rabbit_kafka
 
 timezone: Europe/Paris
 
 sites:
-  - { name: 'acme-project', docroot: '/var/www/AcmeProject', server_name: 'acme-project.dev', template: 'vhost.symfony.j2' }
+  - { name: 'rabbit-kafka', docroot: '/var/www/rabbit_kafka', server_name: 'rabbit-kafka.poc', template: 'vhost.symfony.j2' }
 
-mysql:
-  users:
-    - { name: 'root', password: '' }
-    - { name: 'acme-project' }
-
-postgresql:
-  users:
-    - { name: 'acme-project' }
-  databases:
-    - { name: 'acme-project' }
 
 rabbitmq:
   users:
     - { name: 'admin' }
 
-php_versions: ['7.0', '5.6'] # main php version will be 7.0 because it's the first value
+php_versions: ['7.0'] # main php version will be 7.0 because it's the first value
 
-etc_hosts_lines:
-  - { ip: '192.168.100.12', hostname: 'other-vm-containing-redis-and-elasticsearch' }
-  - { ip: '192.168.100.14', hostname: 'microservice-hosted-elsewhere.dev' }
+# etc_hosts_lines:
+#   - { ip: '192.168.100.12', hostname: 'other-vm-containing-redis-and-elasticsearch' }
+#   - { ip: '192.168.100.14', hostname: 'microservice-hosted-elsewhere.dev' }
 
 logstash_config: >
   input {

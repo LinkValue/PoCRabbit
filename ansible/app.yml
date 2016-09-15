@@ -11,10 +11,7 @@
     - nginx
     - php
     - composer
-    - mysql
-    - postgresql
     - rabbitmq-management
-    - sass
     - nodejs
     - logstash
   vars_files:
