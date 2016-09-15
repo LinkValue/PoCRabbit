@@ -5,16 +5,22 @@ namespace RabbitMqPocBundle\Consumer;
 use OldSound\RabbitMqBundle\RabbitMq\ConsumerInterface;
 use PhpAmqpLib\Message\AMQPMessage;
 
-class WorkQueue implements ConsumerInterface
+class PubSub implements ConsumerInterface
 {
     /**
-     * @param AMQPMessage $msg The message
-     * @return mixed false to reject and requeue, any other value to acknowledge
+     * @var string
      */
+    private $name;
+
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+
     public function execute(AMQPMessage $msg)
     {
         $dir = sys_get_temp_dir();
-        $fh = fopen(sprintf('%s/WorkQueue', $dir), 'a');
+        $fh = fopen(sprintf('%s/%s.txt', $dir, $this->name), 'a');
         fwrite($fh, $msg->getBody());
         fclose($fh);
 

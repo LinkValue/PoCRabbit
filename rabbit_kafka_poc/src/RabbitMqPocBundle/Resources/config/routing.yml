@@ -1,3 +1,7 @@
-rabbit_mq_poc_homepage:
-    path:     /
-    defaults: { _controller: RabbitMqPocBundle:Default:index }
+rabbit_mq_poc_workqueue_produce:
+    path:     /workqueue/produce
+    defaults: { _controller: RabbitMqPocBundle:Default:workQueue }
+
+rabbit_mq_poc_pubsub_produce:
+    path:     /pubsub/produce
+    defaults: { _controller: RabbitMqPocBundle:Default:pubSub }

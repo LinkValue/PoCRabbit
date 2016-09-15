@@ -5,9 +5,12 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="rabbit.consumer.workQueue" class="RabbitMqPocBundle\Consumer\WorkQueue">
+        <service id="rabbit.consumer.workQueue" class="RabbitMqPocBundle\Consumer\WorkQueue"/>
+        <service id="rabbit.consumer.pubSub_1" class="RabbitMqPocBundle\Consumer\PubSub">
+            <argument>PubSub_1</argument>
         </service>
-        <service id="rabbit.producer.workQueue" class="RabbitMqPocBundle\Producer\WorkQueue">
+        <service id="rabbit.consumer.pubSub_2" class="RabbitMqPocBundle\Consumer\PubSub">
+            <argument>PubSub_2</argument>
         </service>
     </services>
 
