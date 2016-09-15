@@ -5,7 +5,7 @@ workspace: /var/www/rabbit_kafka
 timezone: Europe/Paris
 
 sites:
-  - { name: 'rabbit-kafka', docroot: '/var/www/rabbit_kafka', server_name: 'rabbit-kafka.poc', template: 'vhost.symfony.j2' }
+  - { name: 'rabbit-kafka', docroot: '/var/www/rabbit_kafka/rabbit_kafka_poc/web', server_name: 'rabbit-kafka.poc', template: 'vhost.symfony.j2' }
 
 
 rabbitmq:
