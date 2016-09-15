@@ -89,12 +89,12 @@ old_sound_rabbit_mq:
             #requires php_sockets.dll
             use_socket: true # default false
     producers:
-        upload_picture:
+        workQueue:
             connection:       default
             exchange_options: {name: 'upload-picture', type: direct}
             service_alias:    rabbit.producer.workQueue
     consumers:
-        upload_picture:
+        workQueue:
             connection:       default
             exchange_options: {name: 'upload-picture', type: direct}
             queue_options:    {name: 'upload-picture'}

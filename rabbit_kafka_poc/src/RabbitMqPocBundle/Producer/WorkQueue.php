@@ -2,7 +2,12 @@
 
 namespace RabbitMqPocBundle\Producer;
 
-class WorkQueue
+use OldSound\RabbitMqBundle\RabbitMq\ProducerInterface;
+
+class WorkQueue implements ProducerInterface
 {
-    
+    public function publish($msgBody, $routingKey = '', $additionalProperties = array())
+    {
+        
+    }
 }
