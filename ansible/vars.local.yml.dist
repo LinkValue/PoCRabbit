@@ -6,3 +6,28 @@ zsh_theme: 'steeef'
 zsh_editor: 'vim'
 
 composer_github_token: ''
+
+php_extensions:
+  - php-common
+  - php-curl
+  - php-gd
+  - php-imagick
+  - php-imap
+  - php-intl
+  - php-json
+  - php-ldap
+  - php-mbstring
+  - php-mcrypt
+  - php-memcache
+  - php-mongodb
+  - php-mysql
+  - php-pgsql
+  - php-phpdbg
+  - php-readline
+  - php-redis
+  - php-sqlite3
+  - php-stomp
+  - php-xdebug
+  - php-xml
+  - php-zip
+  - php7.0-bcmath
