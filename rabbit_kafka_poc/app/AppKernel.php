@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
             new RabbitMqPocBundle\RabbitMqPocBundle(),
+            new KafkaPocBundle\KafkaPocBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

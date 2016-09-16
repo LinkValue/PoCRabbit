@@ -1,3 +1,7 @@
+kafka_poc:
+    resource: "@KafkaPocBundle/Resources/config/routing.yml"
+    prefix:   /
+
 rabbit_mq_poc:
     resource: "@RabbitMqPocBundle/Resources/config/routing.yml"
     prefix:   /
