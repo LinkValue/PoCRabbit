@@ -11,6 +11,7 @@
     - nginx
     - php
     - composer
+    - nodejs
     - rabbitmq-management
     - kafka
   vars_files:

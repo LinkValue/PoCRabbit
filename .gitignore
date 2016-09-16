@@ -8,3 +8,6 @@
 
 # personal files
 /ansible/vars.local.yml
+
+# node modules
+/nodejs_poc/node_modules/

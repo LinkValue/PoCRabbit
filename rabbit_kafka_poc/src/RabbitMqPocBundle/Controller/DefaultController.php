@@ -14,7 +14,7 @@ class DefaultController extends Controller
 {
     public function workQueueAction()
     {
-        for ($i=0; $i < 10000; $i++) { 
+        for ($i=0; $i < 100000; $i++) {
             $this->container
             ->get('old_sound_rabbit_mq.workqueue_producer')
             ->publish(serialize(sprintf('test fdsfsdf%d', $i)));

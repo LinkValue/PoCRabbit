@@ -101,6 +101,7 @@ old_sound_rabbit_mq:
         topic:
             connection:       default
             exchange_options: {name: 'topic',type: topic}
+            queue_options:    {name: 'topic', routing_keys: ['routing_key_1']}
             service_alias:    rabbit.producer.topic
 
     consumers:
