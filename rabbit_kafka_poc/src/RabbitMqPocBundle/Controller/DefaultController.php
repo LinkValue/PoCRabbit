@@ -34,5 +34,20 @@ class DefaultController extends Controller
         return $this->render('RabbitMqPocBundle:Default:index.html.twig');
     }
 
+    public function topicAction()
+    {
+        for ($i=0; $i < 10000; $i++) { 
+            $this->container
+            ->get('rabbit.producer.topic')
+            ->publish(serialize(sprintf('test routing key 1-%d', $i)), 'routing_key_1');
+
+            $this->container
+            ->get('rabbit.producer.topic')
+            ->publish(serialize(sprintf('test routing key 2-%d', $i)), 'routing_key_2');
+        }
+        
+        return $this->render('RabbitMqPocBundle:Default:index.html.twig');
+    }
+
 
 }

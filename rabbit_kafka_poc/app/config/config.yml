@@ -98,6 +98,11 @@ old_sound_rabbit_mq:
             connection:       default
             exchange_options: {name: 'amq.fanout', type: fanout}
             service_alias:    rabbit.producer.pubSub
+        topic:
+            connection:       default
+            exchange_options: {name: 'topic',type: topic}
+            service_alias:    rabbit.producer.topic
+
     consumers:
         workQueue:
             connection:       default
