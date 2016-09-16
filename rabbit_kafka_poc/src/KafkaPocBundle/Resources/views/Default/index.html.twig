@@ -1,1 +1,9 @@
-Hello World!
+errors:
+{% for error in errors %}
+    {{error}}
+{% endfor %}
+
+messages:
+{% for mess in messages %}
+    {{mess}}
+{% endfor %}

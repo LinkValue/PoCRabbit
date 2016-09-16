@@ -1,0 +1,27 @@
+ - name: Install kafka library
+   apt: name=librdkafka-dev state=present
+
+ - pear: name=channel://pecl.php.net/rdkafka-beta state=present
+
+ - name: download Kafka package
+   get_url: 
+     url: http://apache.crihan.fr/dist/kafka/0.10.0.0/kafka_2.11-0.10.0.0.tgz
+     dest: /home/vagrant/
+ - name: untar kafka
+   command: tar -zxvf /home/vagrant/kafka_2.11-0.10.0.0.tgz
+ 
+ - git: repo=https://github.com/edenhill/librdkafka.git
+        dest=/home/vagrant/librdkafka
+        version=master
+
+ - name: configure lib kafka
+   command: '"{{ item }}" chdir=/home/vagrant/librdkafka/'
+   with_items:
+       - ./configure
+
+ - make: chdir=/home/vagrant/librdkafka
+
+ - make: chdir=/home/vagrant/librdkafka target=install
+   become: yes
+
+ - pear: name=channel://pecl.php.net/rdkafka-beta state=present

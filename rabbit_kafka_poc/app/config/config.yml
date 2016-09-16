@@ -92,7 +92,7 @@ old_sound_rabbit_mq:
     producers:
         workQueue:
             connection:       default
-            exchange_options: {name: 'upload-picture', type: direct}
+            exchange_options: {name: 'workQueue', type: direct}
             service_alias:    rabbit.producer.workQueue
         pubSub:
             connection:       default
@@ -101,14 +101,14 @@ old_sound_rabbit_mq:
         topic:
             connection:       default
             exchange_options: {name: 'topic',type: topic}
-            queue_options:    {name: 'topic', routing_keys: ['routing_key_1']}
+            queue_options:    {name: 'topic', routing_keys: ['routing_key.*']}
             service_alias:    rabbit.producer.topic
 
     consumers:
         workQueue:
             connection:       default
-            exchange_options: {name: 'upload-picture', type: direct}
-            queue_options:    {name: 'upload-picture'}
+            exchange_options: {name: 'workQueue', type: direct}
+            queue_options:    {name: 'workQueue'}
             callback:         rabbit.consumer.workQueue
         pubSub_1:
             connection:       default
