@@ -5,3 +5,7 @@ rabbit_mq_poc_workqueue_produce:
 rabbit_mq_poc_pubsub_produce:
     path:     /pubsub/produce
     defaults: { _controller: RabbitMqPocBundle:Default:pubSub }
+
+rabbit_mq_poc_topic_produce:
+    path:     /topic/produce
+    defaults: { _controller: RabbitMqPocBundle:Default:topic }
