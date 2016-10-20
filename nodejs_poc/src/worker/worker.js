@@ -4,7 +4,7 @@ var amqp = require('amqplib/callback_api');
 
 amqp.connect('amqp://localhost', function(err, conn) {
   conn.createChannel(function(err, ch) {
-    var q = 'task_queue';
+    var q = 'workQueue';
 
     ch.assertQueue(q, {durable: true});
     ch.prefetch(1);

@@ -13,10 +13,10 @@ class WorkQueue implements ConsumerInterface
      */
     public function execute(AMQPMessage $msg)
     {
-        $dir = sys_get_temp_dir();
-        $fh = fopen(sprintf('%s/WorkQueue', $dir), 'a');
-        fwrite($fh, $msg->getBody());
-        fclose($fh);
+        // $dir = sys_get_temp_dir();
+        // $fh = fopen(sprintf('%s/WorkQueue', $dir), 'a');
+        // fwrite($fh, $msg->getBody());
+        // fclose($fh);
 
         return ConsumerInterface::MSG_ACK;
     }

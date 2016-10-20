@@ -1,3 +1,7 @@
-kafka_poc_homepage:
-    path:     /kafka
-    defaults: { _controller: KafkaPocBundle:Default:index }
+kafka_poc_produce:
+    path:     /kafka/produce
+    defaults: { _controller: KafkaPocBundle:Default:produce }
+
+kafka_poc_consume:
+    path:     /kafka/consume
+    defaults: { _controller: KafkaPocBundle:Default:consume }
