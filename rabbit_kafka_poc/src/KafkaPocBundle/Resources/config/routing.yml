@@ -5,3 +5,15 @@ kafka_poc_produce:
 kafka_poc_consume:
     path:     /kafka/consume
     defaults: { _controller: KafkaPocBundle:Default:consume }
+
+kafka_poc_movie_dl:
+    path:     /kafka/dl
+    defaults: { _controller: KafkaPocBundle:Default:dl }  
+
+kafka_poc_movie_full:
+    path:     /kafka/full
+    defaults: { _controller: KafkaPocBundle:Default:fullMovie }
+
+kafka_poc_movie_partial:
+    path:     /kafka/partial
+    defaults: { _controller: KafkaPocBundle:Default:partialMovie }
