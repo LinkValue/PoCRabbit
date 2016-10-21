@@ -17,3 +17,15 @@ kafka_poc_movie_full:
 kafka_poc_movie_partial:
     path:     /kafka/partial
     defaults: { _controller: KafkaPocBundle:Default:partialMovie }
+
+kafka_poc_create_stream:
+    path:     /kafka/stream_log
+    defaults: { _controller: KafkaPocBundle:Default:streamLog }
+
+kafka_poc_show_log:
+    path:     /kafka/show_log
+    defaults: { _controller: KafkaPocBundle:Default:showLog }
+
+kafka_poc_get_piped_stream:
+    path:     /kafka/stream_log
+    defaults: { _controller: KafkaPocBundle:Default:getStreamedLog }

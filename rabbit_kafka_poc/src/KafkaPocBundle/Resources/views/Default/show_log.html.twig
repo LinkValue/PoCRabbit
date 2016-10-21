@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+         <script type="text/javascript">
+         $(function(){
+            $.ajax({
+                url: "{{path('kafka_poc_get_piped_stream')}}"
+            }).done(function(data) {
+                $('#container').append(data);
+            })
+         })
+         </script>
+{% endblock %}
+
+{% block body %}
+    <div id="container"></div>
+{% endblock %}
